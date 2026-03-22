@@ -1,0 +1,524 @@
+/* ============================================
+   casad.io — Site Stylesheet
+   ============================================ */
+
+/* --- Custom Properties --- */
+:root {
+  --color-bg: #121210;
+  --color-bg-alt: #1a1a17;
+  --color-bg-card: #1e1e1b;
+  --color-text: #c8c4b8;
+  --color-text-muted: #8a867a;
+  --color-text-bright: #e8e4d8;
+  --color-accent: #a69070;
+  --color-accent-dim: #7a6a52;
+  --color-rule: #2a2a25;
+  --color-rule-light: #333330;
+
+  --font-display: 'Cormorant Garamond', 'Georgia', serif;
+  --font-body: 'Source Serif 4', 'Georgia', serif;
+  --font-nav: 'Alegreya Sans', 'Helvetica Neue', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+
+  --max-width-text: 38rem;
+  --max-width-page: 52rem;
+
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+  --spacing-xl: 6rem;
+}
+
+/* --- Reset --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 18px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.72;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Typography --- */
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  color: var(--color-text-bright);
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+}
+
+h1 {
+  font-size: 2.6rem;
+  margin-bottom: var(--spacing-md);
+}
+
+h2 {
+  font-size: 1.7rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+h3 {
+  font-size: 1.25rem;
+  margin-bottom: var(--spacing-xs);
+}
+
+p {
+  margin-bottom: 1.4rem;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-text-bright);
+}
+
+blockquote {
+  border-left: 2px solid var(--color-accent-dim);
+  padding-left: var(--spacing-sm);
+  margin: var(--spacing-md) 0;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+/* --- Layout --- */
+
+.site-container {
+  max-width: var(--max-width-page);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.text-column {
+  max-width: var(--max-width-text);
+}
+
+/* --- Site Header --- */
+
+.site-header {
+  padding: var(--spacing-md) 0;
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.site-header-inner {
+  max-width: var(--max-width-page);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.site-title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--color-text-bright);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.site-title a {
+  color: inherit;
+}
+
+.site-title a:hover {
+  color: var(--color-accent);
+}
+
+/* --- Navigation --- */
+
+.site-nav {
+  font-family: var(--font-nav);
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.site-nav a {
+  color: var(--color-text-muted);
+  margin-left: var(--spacing-md);
+  transition: color 0.2s ease;
+}
+
+.site-nav a:hover,
+.site-nav a.active {
+  color: var(--color-text-bright);
+}
+
+/* Mobile nav toggle */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--color-text-muted);
+  font-size: 1.4rem;
+  cursor: pointer;
+  padding: 0.25rem;
+  line-height: 1;
+}
+
+/* --- Landing Page --- */
+
+.landing-hero {
+  padding: var(--spacing-xl) 0 var(--spacing-lg);
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.landing-hero h1 {
+  font-size: 3.2rem;
+  letter-spacing: 0.02em;
+  margin-bottom: var(--spacing-xs);
+}
+
+.landing-hero .subtitle {
+  font-family: var(--font-nav);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-lg);
+}
+
+.landing-description {
+  padding: var(--spacing-lg) 0;
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.landing-description p {
+  font-size: 1.05rem;
+  max-width: var(--max-width-text);
+}
+
+/* --- Chapter Index --- */
+
+.chapter-index {
+  padding: var(--spacing-lg) 0;
+}
+
+.chapter-index h2 {
+  font-size: 1.1rem;
+  font-family: var(--font-nav);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-md);
+  font-weight: 400;
+}
+
+.chapter-list {
+  list-style: none;
+}
+
+.chapter-list li {
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.chapter-list li:first-child {
+  border-top: 1px solid var(--color-rule);
+}
+
+.chapter-list a {
+  display: flex;
+  align-items: baseline;
+  padding: 1rem 0;
+  transition: background-color 0.15s ease;
+  gap: 1.2rem;
+}
+
+.chapter-list a:hover {
+  color: var(--color-text-bright);
+}
+
+.chapter-num {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-accent-dim);
+  min-width: 2rem;
+  flex-shrink: 0;
+}
+
+.chapter-title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--color-text);
+  flex-grow: 1;
+}
+
+.chapter-list a:hover .chapter-title {
+  color: var(--color-text-bright);
+}
+
+.chapter-field {
+  font-family: var(--font-nav);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+}
+
+/* --- Chapter Page --- */
+
+.chapter-header {
+  padding: var(--spacing-xl) 0 var(--spacing-lg);
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.chapter-header .chapter-label {
+  font-family: var(--font-nav);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-xs);
+}
+
+.chapter-header h1 {
+  font-size: 2.4rem;
+  margin-bottom: var(--spacing-xs);
+}
+
+.chapter-header .chapter-field-label {
+  font-family: var(--font-nav);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-accent-dim);
+}
+
+.chapter-body {
+  padding: var(--spacing-lg) 0;
+  max-width: var(--max-width-text);
+}
+
+.chapter-body p {
+  text-indent: 1.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.chapter-body p:first-child {
+  text-indent: 0;
+}
+
+.chapter-body .placeholder {
+  color: var(--color-text-muted);
+  font-style: italic;
+  text-indent: 0;
+  padding: var(--spacing-md) 0;
+}
+
+/* Chapter navigation */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--spacing-md) 0 var(--spacing-lg);
+  border-top: 1px solid var(--color-rule);
+  font-family: var(--font-nav);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.chapter-nav a {
+  color: var(--color-text-muted);
+}
+
+.chapter-nav a:hover {
+  color: var(--color-text-bright);
+}
+
+.chapter-nav .prev::before {
+  content: '\2190\00a0';
+}
+
+.chapter-nav .next::after {
+  content: '\00a0\2192';
+}
+
+/* --- Full Text Page --- */
+
+.full-text-header {
+  padding: var(--spacing-xl) 0 var(--spacing-lg);
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.full-text-body {
+  padding: var(--spacing-lg) 0;
+  max-width: var(--max-width-text);
+}
+
+.full-text-body h2 {
+  font-size: 1.5rem;
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--color-rule);
+}
+
+.full-text-body h2:first-child {
+  margin-top: 0;
+  border-top: none;
+  padding-top: 0;
+}
+
+.full-text-body p {
+  text-indent: 1.5rem;
+  margin-bottom: 1.2rem;
+}
+
+/* --- About Page --- */
+
+.about-header {
+  padding: var(--spacing-xl) 0 var(--spacing-lg);
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.about-body {
+  padding: var(--spacing-lg) 0;
+  max-width: var(--max-width-text);
+}
+
+.about-body p {
+  margin-bottom: 1.4rem;
+}
+
+/* --- Second Book Placeholder --- */
+
+.placeholder-page {
+  padding: var(--spacing-xl) 0;
+}
+
+.placeholder-page h1 {
+  margin-bottom: var(--spacing-md);
+}
+
+.placeholder-page p {
+  max-width: var(--max-width-text);
+  color: var(--color-text-muted);
+}
+
+/* --- Site Footer --- */
+
+.site-footer {
+  padding: var(--spacing-md) 0;
+  border-top: 1px solid var(--color-rule);
+  margin-top: var(--spacing-lg);
+}
+
+.site-footer-inner {
+  max-width: var(--max-width-page);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+  font-family: var(--font-nav);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+}
+
+/* --- Responsive --- */
+
+@media (max-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+
+  .site-header-inner {
+    flex-wrap: wrap;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .site-nav {
+    display: none;
+    width: 100%;
+    padding-top: var(--spacing-sm);
+  }
+
+  .site-nav.open {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+
+  .site-nav a {
+    margin-left: 0;
+    padding: 0.4rem 0;
+  }
+
+  .landing-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .chapter-list a {
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .chapter-field {
+    width: 100%;
+    order: 3;
+  }
+
+  .site-container {
+    padding: 0 var(--spacing-sm);
+  }
+
+  .site-header-inner {
+    padding: 0 var(--spacing-sm);
+  }
+
+  .site-footer-inner {
+    padding: 0 var(--spacing-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .landing-hero {
+    padding: var(--spacing-lg) 0 var(--spacing-md);
+  }
+
+  .chapter-header {
+    padding: var(--spacing-lg) 0 var(--spacing-md);
+  }
+}
+
+/* --- Utility --- */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
